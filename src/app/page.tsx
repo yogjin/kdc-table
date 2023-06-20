@@ -8,11 +8,17 @@ const 주류 = kdcTable.map((item) => ({ [item.주류코드]: item.주류 }));
 const 강목 = kdcTable.map((item) => ({ [item.강목코드]: item.강목 }));
 const 요목 = kdcTable.map((item) => ({ [item.요목코드]: item.요목 }));
 
-const 주류unique = Array.from(new Set(주류.map(JSON.stringify))).map(JSON.parse);
+const 주류unique = Array.from(new Set(주류.map((item) => JSON.stringify(item)))).map((item) =>
+  JSON.parse(item)
+);
 
-const 강목unique = Array.from(new Set(강목.map(JSON.stringify))).map(JSON.parse);
+const 강목unique = Array.from(new Set(강목.map((item) => JSON.stringify(item)))).map((item) =>
+  JSON.parse(item)
+);
 
-const 요목unique = Array.from(new Set(요목.map(JSON.stringify))).map(JSON.parse);
+const 요목unique = Array.from(new Set(요목.map((item) => JSON.stringify(item)))).map((item) =>
+  JSON.parse(item)
+);
 
 const options = 주류unique.map((item) => {
   const [[주류key, value]] = Object.entries(item);
@@ -52,7 +58,7 @@ export default function Home() {
     await navigator.clipboard.writeText(target);
   };
 
-  const dropdownRender = (menus) => (
+  const dropdownRender = (menus: any) => (
     <div>
       {menus}
       <Divider
