@@ -77,22 +77,22 @@ export default function Home() {
   );
 
   return (
-    <>
-      <header
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          margin: '100px',
-        }}
-      >
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '50px',
+        paddingTop: '100px',
+      }}
+    >
+      <header>
         <h1>KDC 한국십진분류표</h1>
       </header>
       <main
         style={{
-          position: 'absolute',
-          top: '30%',
-          left: '40%',
+          width: '500px',
         }}
       >
         <Cascader
@@ -123,12 +123,12 @@ export default function Home() {
             bottom: 0,
           }}
         >
-          <p>Copyright 2023. 박영진. All rights reserved.</p>
+          <p>Copyright 2025. 박영진. All rights reserved.</p>
           <a href="https://github.com/yogjin/" target="_blank">
             yogjin github
           </a>
         </footer>
       </div>
-    </>
+    </div>
   );
 }
